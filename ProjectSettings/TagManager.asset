@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ignore Raycast
+    uniqueID: 3801621215
+    locked: 0

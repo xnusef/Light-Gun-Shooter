@@ -8,6 +8,9 @@ public class EnemyDie : MonoBehaviour
     public GameObject timerobject;
     private Timer script;
 
+    /*public GameObject enemySpawner;
+    private EnemySpawner enemyscript;*/
+
     public float quitTime = 2f;
     public float addTime = 3f;
 
@@ -15,9 +18,8 @@ public class EnemyDie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(timerobject.transform.name);
         script = timerobject.GetComponent<Timer>();
-        Debug.Log(script);
+        //enemyscript = enemySpawner.GetComponent<EnemySpawner>();
         StartCoroutine(SelfDestruction());
     }
 
@@ -30,6 +32,7 @@ public class EnemyDie : MonoBehaviour
             Debug.Log("script no es null");
         } else {
             script.QuitTime(quitTime);
+            //enemyscript.
         }
         Destroy(this.gameObject);
     

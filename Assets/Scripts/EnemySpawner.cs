@@ -13,8 +13,6 @@ public class EnemySpawner : MonoBehaviour
     
     Vector3 whereSpawning;
 
-    public float minSpawnRate = 1f;
-    public float maxSpawnRate = 2f;
     float nextSpawn = 4f;
 
 
@@ -36,12 +34,21 @@ public class EnemySpawner : MonoBehaviour
             randomPos = Random.Range(0,(xpos.Length - 1));
             if (existingEnemies[randomPos] == false)
             {
-                nextSpawn = Time.time + Random.Range(minSpawnRate,maxSpawnRate);
                 whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
                 var myEnemy = GameObject.Instantiate(enemy);
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
                 enemy.transform.position = whereSpawning;
                 existingEnemies[randomPos] = true;
+                if (nextSpawn <= 15)
+                {
+                    nextSpawn = Time.time + Random.Range(2f,3f);
+                } else if (nextSpawn > 15 && nextSpawn <= 30)
+                {
+                    nextSpawn = Time.time + Random.Range(1.5f,2.5f);
+                } else if (nextSpawn > 30)
+                {
+                    nextSpawn = Time.time + Random.Range(0.7f,1.7f);
+                }
             } else {
                 nextSpawn = Time.time + 1f;
             }
