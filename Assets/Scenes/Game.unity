@@ -213,6 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sight: {fileID: 127299863}
   weapon: {fileID: 2094450890}
+  fire: {fileID: 704186846}
   cam: {fileID: 519420031}
 --- !u!1 &136521210
 GameObject:
@@ -483,7 +484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: -210}
+  m_AnchoredPosition: {x: 0, y: -210}
   m_SizeDelta: {x: 255.96, y: 255.9612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &755345128
@@ -798,7 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletCounter: {fileID: 1996550150}
-  Fire: {fileID: 704186846}
+  fire: {fileID: 704186846}
 --- !u!82 &1197959895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1069,8 +1070,6 @@ MonoBehaviour:
   - 2.59
   - 2.46
   - 2.29
-  minSpawnRate: 2
-  maxSpawnRate: 3
 --- !u!1 &1674934113
 GameObject:
   m_ObjectHideFlags: 0
