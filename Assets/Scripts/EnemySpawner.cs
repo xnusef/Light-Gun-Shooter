@@ -37,12 +37,11 @@ public class EnemySpawner : MonoBehaviour
             if (existingEnemies[randomPos] == false)
             {
                 nextSpawn = Time.time + Random.Range(minSpawnRate,maxSpawnRate);
-                //whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
+                whereSpawning = new Vector3(xpos[randomPos], ypos[randomPos], 0);
                 var myEnemy = GameObject.Instantiate(enemy);
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
-                //enemy.transform.position = whereSpawning;
+                enemy.transform.position = whereSpawning;
                 existingEnemies[randomPos] = true;
-
             } else {
                 nextSpawn = Time.time + 1f;
             }
