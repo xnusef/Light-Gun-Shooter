@@ -23,8 +23,8 @@ public class FollowMouse : MonoBehaviour
         sight.transform.position = Input.mousePosition;
         weaponPos = Input.mousePosition;
         firePos = Input.mousePosition;
-        weaponPos.y = 465;
-        firePos.y = 330;
+        weaponPos.y = 370;
+        firePos.y = 310;
 
         weapon.transform.position = weaponPos;
         fire.transform.position = firePos;
