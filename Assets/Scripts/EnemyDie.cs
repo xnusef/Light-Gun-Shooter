@@ -34,11 +34,10 @@ public class EnemyDie : MonoBehaviour
             Debug.Log("script es null");
         } else {
             script.QuitTime(quitTime);
+            Debug.Log(enemyscript);
             enemyscript.RemoveEnemy(this.gameObject);
             //enemyscript.
         }
-        Destroy(this.gameObject);
-    
     }
 
     public void Shooted()
