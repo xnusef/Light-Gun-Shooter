@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
 
     public float[] xpos;
     public float[] ypos;
-    bool[] existingEnemies;
+    public bool[] existingEnemies;
     int randomPos;
     
     Vector3 whereSpawning;
@@ -53,6 +53,17 @@ public class EnemySpawner : MonoBehaviour
                 nextSpawn = Time.time + 1f;
             }
             
+        }
+    }
+
+    public void RemoveEnemy(GameObject enemigo)
+    {
+        for(int i = 0 ; i < 17 ; i++)
+        {
+            if (enemigo.transform.position == new Vector3(xpos[i], ypos[i], 0))
+            {
+                existingEnemies[i] = false;
+            }
         }
     }
 }

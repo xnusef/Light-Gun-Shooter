@@ -35,4 +35,9 @@ public class Timer : MonoBehaviour
     {
         timeLeft -= time;
     }
+
+    public void AddTime(float time)
+    {
+        timeLeft += time;
+    }
 }
