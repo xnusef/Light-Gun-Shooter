@@ -34,7 +34,6 @@ public class EnemyDie : MonoBehaviour
             Debug.Log("script es null");
         } else {
             script.QuitTime(quitTime);
-            Debug.Log(enemyscript);
             enemyscript.RemoveEnemy(this.gameObject);
             //enemyscript.
         }
@@ -61,8 +60,7 @@ public class EnemyDie : MonoBehaviour
             Debug.Log("script es null");
         } else {
             script.AddTime(addTime);
+            enemyscript.RemoveEnemy(this.gameObject);
         }
-        Destroy(this.gameObject);
-    
     }
 }
