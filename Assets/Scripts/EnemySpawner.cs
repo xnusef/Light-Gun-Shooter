@@ -13,8 +13,6 @@ public class EnemySpawner : MonoBehaviour
     bool existGO = false;
 
     int randomPos;
-    
-    Vector3 whereSpawning;
 
     float nextSpawn = 4f;
 
@@ -39,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
 
             for (int i = 0 ; i < enemiesCount ; i++)
             {
-                if (enemies[i].transform.position.x == position[randomPos].x && enemies[i].transform.position.y == position[randomPos].y)
+                if (enemies[i].transform.position == new Vector3 (position[randomPos].x,position[randomPos].y,0))
                 {
                     existGO = true;
                 }
@@ -47,7 +45,8 @@ public class EnemySpawner : MonoBehaviour
             
             if (existGO == false)
             {
-                GameObject myEnemy = GameObject.Instantiate(enemy);
+                //GameObject myEnemy = GameObject.Instantiate(enemy);
+                GameObject myEnemy = Instantiate(enemy);
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
                 myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
                 enemies.Add(myEnemy);
@@ -62,9 +61,14 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log("RemoveEnemy");
         Debug.Log(enemiesCount);
+        Debug.Log(enemies[0].transform.position);
         for (int i = 0 ; i < enemiesCount ; i++)
         {
             Debug.Log("For");
+            Debug.Log(i);
+            Debug.Log(enemies[i].transform.position);
+            Debug.Log(enemigo.transform.position);
+            
             if (enemies[i].transform.position == enemigo.transform.position)
             {
                 Debug.Log("If");
@@ -73,35 +77,5 @@ public class EnemySpawner : MonoBehaviour
                 Destroy(enemigo);
             }
         }
-
-
-
-        /*bool found = false;
-        int cordsPos = -1;
-
-        float enemigoX = enemigo.transform.position.x;
-        float enemigoY = enemigo.transform.position.y;
-
-        Debug.Log(enemigoX);
-        Debug.Log(enemigoY);
-
-        for (int i = 0 ; i < 17 ; i++)
-        {
-            if (enemigoX == xpos[i])
-            {
-                if (enemigoY == ypos[i])
-                {
-                    cordsPos = i;
-                    found = true;
-                }
-            }
-        }
-
-        if (found == true)
-        {
-            existingEnemies[cordsPos] = false;
-            cordsPos = -1;
-            found = false;
-        }*/
     }
 }

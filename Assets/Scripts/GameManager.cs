@@ -48,10 +48,12 @@ public class GameManager : MonoBehaviour
                 
             } else if (hit == true)
             {
-                if (hit.collider.tag == "Enemy")
+                bool shooted = true;
+                if (hit.collider.tag == "Enemy" && shooted == true)
                 {
                     enemyscript = hit.collider.GetComponent<EnemyDie>();
                     enemyscript.Shooted();
+                    shooted = false;
                 }
             }
             
