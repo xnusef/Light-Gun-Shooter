@@ -46,13 +46,13 @@ public class EnemySpawner : MonoBehaviour
     
     public void RemoveEnemy(GameObject enemigo)
     {
-        Debug.Log("RemoveEnemy");
-        Debug.Log("EnemiesCount: "+ enemiesCount);
+        //Debug.Log("RemoveEnemy");
+        //Debug.Log("EnemiesCount: "+ enemiesCount);
         //Debug.Log(enemies[0].gameObject); //da problemas // dice que no existe la posición 0 // es más grande que el tamaño del array
         for (int i = 0 ; i < enemiesCount && enemies[i] != null ; i++)
         {
-            Debug.Log("Enemigo: " + enemigo.transform.position);
-            Debug.Log("Enemy: " +enemies[i].gameObject.transform.position);
+            //Debug.Log("Enemigo: " + enemigo.transform.position);
+            //Debug.Log("Enemy: " +enemies[i].gameObject.transform.position);
             
             if (enemies[i].gameObject.transform.position == enemigo.transform.position) // da problemas
             {
