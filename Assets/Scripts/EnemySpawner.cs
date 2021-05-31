@@ -7,16 +7,17 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject enemySpawner;
 
-    public Vector2[] position;
-    public List<GameObject> enemies = new List<GameObject>();
+    public Vector2 positionNewObject;
+    public List<GameObject> enemies;
     static int enemiesCount = 0;
-    bool existGO = false;
-
-    int randomPos;
 
     float nextSpawn = 4f;
 
 
+    void Awake()
+    {
+        enemies = new List<GameObject>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,9 +34,8 @@ public class EnemySpawner : MonoBehaviour
                 nextSpawn = Time.time + Random.Range(0.7f,1.7f);
             }
 
-            randomPos = Random.Range(0,(position.Length - 1));
-
-            for (int i = 0 ; i < enemiesCount ; i++)
+            SpawnearEnemigos();
+           /* for (int i = 0 ; i < enemiesCount ; i++)
             {
                 if (enemies[i].transform.position == new Vector3 (position[randomPos].x,position[randomPos].y,0))
                 {
@@ -53,16 +53,46 @@ public class EnemySpawner : MonoBehaviour
                 enemiesCount += 1;
                 Debug.Log(enemiesCount);
                 existGO = false;
-            }            
+            }   */         
         }
     }
     
+    void SpawnearEnemigos()
+    {
+        int positionCoord = Random.Range(0, 16);
+        positionNewObject = new Vector2(positionCoord, positionCoord);
+        if (enemiesCount == 0)
+        {
+            GameObject myEnemy = Instantiate(enemy) as GameObject;
+            myEnemy.transform.SetParent(enemySpawner.transform, false); //Es esto necesario?
+            Vector3 positionNewObjectZ = new Vector3(positionNewObject.x, positionNewObject.y, 0);
+            myEnemy.transform.position = positionNewObjectZ;
+            enemies.Add(myEnemy);
+            enemiesCount++;
+        }
+        else
+        {
+            foreach (GameObject go in enemies){
+                if (positionNewObject.x != go.transform.position.x && positionNewObject.y != go.transform.position.y)
+                {
+                    GameObject myEnemy = Instantiate(enemy) as GameObject;
+                    myEnemy.transform.SetParent(enemySpawner.transform, false); //Es esto necesario?
+                    Vector3 positionNewObjectZ = new Vector3(positionNewObject.x, positionNewObject.y, 0);
+                    myEnemy.transform.position = positionNewObjectZ;
+                    enemies.Add(myEnemy);
+                    enemiesCount++;
+                }
+            }
+        }
+        
+    }
+
     public void RemoveEnemy(GameObject enemigo)
     {
         Debug.Log("RemoveEnemy");
         Debug.Log(enemiesCount);
         Debug.Log(enemies[0].transform.position);
-        for (int i = 0 ; i < enemiesCount ; i++)
+        /*for (int i = 0 ; i < enemies.Lenght; i++)
         {
             Debug.Log("For");
             Debug.Log(i);
@@ -76,6 +106,6 @@ public class EnemySpawner : MonoBehaviour
                 enemies.RemoveAt(i);
                 Destroy(enemigo);
             }
-        }
+        }*/
     }
 }
