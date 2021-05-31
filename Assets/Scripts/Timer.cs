@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
     public static float timeLeft = 16f; //para que no comience en 14
     
     public Text countdown;
+    int actualTime = 16;
 
     public Text timer;
     int time = 0;
@@ -14,13 +15,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeLeft > 0)
+        if (actualTime > 0)
         {
             //tiempo restante - tiempo actual  // por cada frame resta el tiempo exacto desde la ejecución
-            int actualTime = (int) (timeLeft - Time.timeSinceLevelLoad);
+            actualTime = (int) (timeLeft - Time.timeSinceLevelLoad);
             countdown.text = actualTime.ToString();
 
-        } else if (timeLeft < 0)
+        } else if (actualTime < 0)
         {
             countdown.text = ("0");
             //EndGame

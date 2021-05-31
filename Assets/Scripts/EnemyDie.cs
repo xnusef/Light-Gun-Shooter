@@ -29,13 +29,12 @@ public class EnemyDie : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBDestroying);
 
-        if(script == null)
+        if(script == null || enemyscript == null)
         {
             Debug.Log("script es null");
         } else {
             script.QuitTime(quitTime);
             enemyscript.RemoveEnemy(this.gameObject);
-            //enemyscript.
         }
     }
 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5450200713824340929}
-  - component: {fileID: 5450200713824340928}
+  - component: {fileID: 835346179}
   m_Layer: 0
   m_Name: Enemy spawner
   m_TagString: Untagged
@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5450200713824340930}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0799136, y: 1.0799136, z: 1.0799136}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5450200713824340928
+--- !u!114 &835346179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,44 +40,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5450200713824340930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26688c7ca26ae7e409d6151c9bb82a06, type: 3}
+  m_Script: {fileID: 11500000, guid: a2679c5ff5e628b459138ab93fb4b9d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 5841847121952709880, guid: 48c7513fefd264f428facc1738207ce5, type: 3}
   enemySpawner: {fileID: 5450200713824340930}
-  xpos:
-  - -6.364
-  - -4.81
-  - -1.69
-  - 0.39
-  - 2.22
-  - 5.42
-  - 6.84
-  - 8.32
-  - 6.56
-  - 4.65
-  - 3.1
-  - 1.1
-  - -0.55
-  - -2.55
-  - -4.03
-  - -6.05
-  - -7.81
-  ypos:
-  - 0.198
-  - 0.76
-  - 1.06
-  - 0.67
-  - 1.01
-  - 0.82
-  - 0.13
-  - 2.28
-  - 2.47
-  - 2.53
-  - 2.68
-  - 2.68
-  - 2.68
-  - 2.68
-  - 2.59
-  - 2.46
-  - 2.29
+  position:
+  - {x: -6.371573, y: 0.2933771}
+  - {x: -0.73, y: 2.74}
+  - {x: 6.73, y: 0.06}
+  enemies: []
