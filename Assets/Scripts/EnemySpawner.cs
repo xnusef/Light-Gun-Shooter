@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class EnemySpawner : MonoBehaviour
 {
 
+    public GameObject errorImage;
     public GameObject enemy;
     public GameObject enemySpawner;
 
@@ -57,7 +59,6 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
-
 
     void SpawnEnemies()
     {

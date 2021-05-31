@@ -13,7 +13,7 @@ public class EnemyDie : MonoBehaviour
     public GameObject enemySpawner;
     private EnemySpawner enemyscript;
 
-    public GameObject error;
+    public GameObject errorFov;
 
     public float quitTime = 2f;
     public float addTime = 3f;
@@ -54,9 +54,6 @@ public class EnemyDie : MonoBehaviour
         } else {
             script.QuitTime(quitTime);
             enemyscript.RemoveEnemy(this.gameObject);
-            GameObject go = Instantiate(error);
-            yield return new WaitForSeconds(0.2f);
-            Destroy(error);
         }
     }
 
