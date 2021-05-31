@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyDie : MonoBehaviour
 {
-    public float timeBDestroying = 3f;
+    public float timeBDestroying = 3f; //Time Before Destroying // Tiempo antes de ser destruido
 
     public GameObject timerobject;
     private Timer script;
@@ -37,8 +37,6 @@ public class EnemyDie : MonoBehaviour
             enemyscript.RemoveEnemy(this.gameObject);
             //enemyscript.
         }
-        Destroy(this.gameObject);
-    
     }
 
     public void Shooted()
@@ -62,8 +60,7 @@ public class EnemyDie : MonoBehaviour
             Debug.Log("script es null");
         } else {
             script.AddTime(addTime);
+            enemyscript.RemoveEnemy(this.gameObject);
         }
-        Destroy(this.gameObject);
-    
     }
 }
