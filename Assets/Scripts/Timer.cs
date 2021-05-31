@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 
-    public static float timeLeft = 16f;//para que no comience en 14
+    public static float timeLeft = 16f; //para que no comience en 14
     
     public Text countdown;
 
@@ -16,8 +16,10 @@ public class Timer : MonoBehaviour
     {
         if (timeLeft > 0)
         {
-            timeLeft -= Time.timeSinceLevelLoad;//tiempo restante - tiempo actual  // por cada frame resta el tiempo exacto desde la ejecución
-            countdown.text = ((int) timeLeft).ToString();
+            //tiempo restante - tiempo actual  // por cada frame resta el tiempo exacto desde la ejecución
+            int actualTime = (int) (timeLeft - Time.timeSinceLevelLoad);
+            countdown.text = actualTime.ToString();
+
         } else if (timeLeft < 0)
         {
             countdown.text = ("0");
