@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     public Vector2[] position;
 
-    public List<GameObject> enemies = new List<GameObject>();
+    static List<GameObject> enemies = new List<GameObject>();
 
     static int enemiesCount = 0;
     bool existGO = false; //GO = GameObject.
@@ -56,33 +56,38 @@ public class EnemySpawner : MonoBehaviour
                 myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
 
                 enemies.Insert(enemiesCount,myEnemy); //Da problemas
-                Debug.Log(enemies);
+                Debug.Log(enemies.Count + " CANTIDAD DE ENEMIGOS");
 
                 enemiesCount += 1;
-                Debug.Log(enemiesCount);
+                //Debug.Log(enemiesCount + " CONTADOR DE ENEMIGOS +1");
             } else {existGO = false;}       
         }
     }
     
     public void RemoveEnemy(GameObject enemigo)
     {
-        Debug.Log("RemoveEnemy");
-        Debug.Log(enemiesCount);
-        Debug.Log(enemies[0].transform.position); //da problemas // dice que no existe la posición 0 // es más grande que el tamaño del array
-        for (int i = 0 ; i < enemiesCount ; i++)
+        //Debug.Log("RemoveEnemy");
+        //Debug.Log(enemiesCount);
+        //Debug.Log(enemies[0].transform.position); //da problemas // dice que no existe la posición 0 // es más grande que el tamaño del array
+
+        Debug.Log(enemies.Count+"  EMEMIMOS");
+
+        for (int i = 0 ; i < enemies.Count; i++)
         {
-            Debug.Log("For");
-            Debug.Log(i);
-            Debug.Log(enemies[i].transform.position); // da problemas
-            Debug.Log(enemigo.transform.position);
+            Debug.Log("MUERERE");
             
+             Debug.Log(i + " INDICE");
             if (enemies[i].transform.position == enemigo.transform.position) // da problemas
             {
                 Debug.Log("If");
                 enemiesCount -= 1;
+                Debug.Log(enemiesCount+"CONTADOR DE ENEMIGOS");
                 enemies.RemoveAt(i);
+                Debug.Log(i+"INDEX del LIST");
                 Destroy(enemigo);
             }
+            
         }
+        //Debug.Log("MUERERE");
     }
 }
