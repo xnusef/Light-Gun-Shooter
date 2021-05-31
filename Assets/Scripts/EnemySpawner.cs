@@ -10,12 +10,15 @@ public class EnemySpawner : MonoBehaviour
     public Vector2[] position;
     public List<GameObject> enemies = new List<GameObject>();
     static int enemiesCount = 0;
-    bool existGO = false;
+    bool existGO = false; //GO = GameObject.
 
     int randomPos;
 
     float nextSpawn = 4f;
 
+    void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -49,7 +52,10 @@ public class EnemySpawner : MonoBehaviour
                 GameObject myEnemy = Instantiate(enemy);
                 myEnemy.transform.SetParent(enemySpawner.transform, false);
                 myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
-                enemies.Add(myEnemy);
+
+                enemies.Insert(enemiesCount,myEnemy); //Da problemas
+                Debug.Log(enemies.Count);
+
                 enemiesCount += 1;
                 Debug.Log(enemiesCount);
                 existGO = false;
@@ -61,15 +67,15 @@ public class EnemySpawner : MonoBehaviour
     {
         Debug.Log("RemoveEnemy");
         Debug.Log(enemiesCount);
-        Debug.Log(enemies[0].transform.position);
+        Debug.Log(enemies[0].transform.position); //da problemas // dice que no existe la posición 0 // es más grande que el tamaño del array
         for (int i = 0 ; i < enemiesCount ; i++)
         {
             Debug.Log("For");
             Debug.Log(i);
-            Debug.Log(enemies[i].transform.position);
+            Debug.Log(enemies[i].transform.position); // da problemas
             Debug.Log(enemigo.transform.position);
             
-            if (enemies[i].transform.position == enemigo.transform.position)
+            if (enemies[i].transform.position == enemigo.transform.position) // da problemas
             {
                 Debug.Log("If");
                 enemiesCount -= 1;

@@ -4,7 +4,6 @@ public class CameraSizer : MonoBehaviour
 {
     void Start()
     {
-        // Switch to 640 x 480 full-screen
-        Screen.SetResolution(1920, 1080, true);
+        Screen.SetResolution(1920, 1080, true);//setea la camara a 1920x1080 //pendiente
     }
 }

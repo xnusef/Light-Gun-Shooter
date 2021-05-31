@@ -4,9 +4,9 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject BulletCounter;
-    private Bullets bulletScript;
-    public GameObject fire;
+    public GameObject BulletCounter; // tambor
+    private Bullets bulletScript; //script del tambor "Bullets"
+    public GameObject fire; //fueguito del arma
 
     private EnemyDie enemyscript;
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
                 bool shooted = true;
                 if (hit.collider.tag == "Enemy" && shooted == true)
                 {
-                    enemyscript = hit.collider.GetComponent<EnemyDie>();
+                    enemyscript = hit.collider.GetComponent<EnemyDie>(); //Setea "enemyscript" como el script "EnemyDie" que forma parte del collider del objeto al que le diste
                     enemyscript.Shooted();
                     shooted = false;
                 }
@@ -78,7 +78,5 @@ public class GameManager : MonoBehaviour
             bulletScript.ChangeSprite(bullets);
         }
         reloading = false;
-
-
     }
 }

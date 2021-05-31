@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Bullets : MonoBehaviour
 {
 
-    public GameObject bulletCount;
+    public GameObject bulletCount;// tambor del arma
     public Sprite[] mySprites;
 
 

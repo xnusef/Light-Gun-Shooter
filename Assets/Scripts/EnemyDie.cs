@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyDie : MonoBehaviour
 {
-    public float timeBDestroying = 3f;
+    public float timeBDestroying = 3f; //Time Before Destroying // Tiempo antes de ser destruido
 
     public GameObject timerobject;
     private Timer script;
