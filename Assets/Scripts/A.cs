@@ -8,7 +8,6 @@ public class A : MonoBehaviour
     //experimental
     public List<GameObject> enemies = new List<GameObject>();
 
-
     // Start is called before the first frame update
     void Start()
     {

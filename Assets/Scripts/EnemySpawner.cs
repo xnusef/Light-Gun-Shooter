@@ -8,7 +8,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemySpawner;
 
     public Vector2[] position;
+
     public List<GameObject> enemies = new List<GameObject>();
+
     static int enemiesCount = 0;
     bool existGO = false; //GO = GameObject.
 
@@ -54,12 +56,11 @@ public class EnemySpawner : MonoBehaviour
                 myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
 
                 enemies.Insert(enemiesCount,myEnemy); //Da problemas
-                Debug.Log(enemies.Count);
+                Debug.Log(enemies);
 
                 enemiesCount += 1;
                 Debug.Log(enemiesCount);
-                existGO = false;
-            }            
+            } else {existGO = false;}       
         }
     }
     
