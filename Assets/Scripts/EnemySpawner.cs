@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad > nextSpawn)
         {
+            //estos if anidados aumentan la velocidad del spawn del juego
             if (nextSpawn <= 15)
             {
                 nextSpawn = Time.timeSinceLevelLoad + Random.Range(2f,3f);
@@ -38,25 +39,25 @@ public class EnemySpawner : MonoBehaviour
                 nextSpawn = Time.timeSinceLevelLoad + Random.Range(0.7f,1.7f);
             }
 
-            randomPos = Random.Range(0,(position.Length - 1));
+            randomPos = Random.Range(0,(position.Length - 1));//genera posición aleatoria
 
             for (int i = 0 ; i < enemiesCount ; i++)
             {
                 if (enemies[i].transform.position == new Vector3 (position[randomPos].x,position[randomPos].y,0))
                 {
-                    existGO = true;
+                    existGO = true; //la existencia del objeto fue comprovada
                 }
             }
             
             if (existGO == false)
             {
                 //GameObject myEnemy = GameObject.Instantiate(enemy);
-                GameObject myEnemy = Instantiate(enemy);
-                myEnemy.transform.SetParent(enemySpawner.transform, false);
-                myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
+                GameObject myEnemy = Instantiate(enemy);                                                        //desde acá
+                myEnemy.transform.SetParent(enemySpawner.transform, false);                                     //creación de enemigos
+                myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);      //hasta acá
 
-                enemies.Insert(enemiesCount,myEnemy); //Da problemas
-                Debug.Log(enemies.Count + " CANTIDAD DE ENEMIGOS");
+                enemies.Insert(enemiesCount,myEnemy); //se agrega a la lista
+                //Debug.Log(enemies.Count + " CANTIDAD DE ENEMIGOS");
 
                 enemiesCount += 1;
                 //Debug.Log(enemiesCount + " CONTADOR DE ENEMIGOS +1");
@@ -66,20 +67,10 @@ public class EnemySpawner : MonoBehaviour
     
     public void RemoveEnemy(GameObject enemigo)
     {
-        //Debug.Log("RemoveEnemy");
-        //Debug.Log(enemiesCount);
-        //Debug.Log(enemies[0].transform.position); //da problemas // dice que no existe la posición 0 // es más grande que el tamaño del array
-
-        Debug.Log(enemies.Count+"  EMEMIMOS");
-
         for (int i = 0 ; i < enemies.Count; i++)
-        {
-            Debug.Log("MUERERE");
-            
-             Debug.Log(i + " INDICE");
-            if (enemies[i].transform.position == enemigo.transform.position) // da problemas
+        {      
+            if (enemies[i].transform.position == enemigo.transform.position)
             {
-                Debug.Log("If");
                 enemiesCount -= 1;
                 Debug.Log(enemiesCount+"CONTADOR DE ENEMIGOS");
                 enemies.RemoveAt(i);
@@ -88,6 +79,5 @@ public class EnemySpawner : MonoBehaviour
             }
             
         }
-        //Debug.Log("MUERERE");
     }
 }
