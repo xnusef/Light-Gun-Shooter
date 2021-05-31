@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullets : MonoBehaviour
 {
 
-    public SpriteRenderer bulletCount;
+    public GameObject bulletCount;// tambor del arma
     public Sprite[] mySprites;
 
 
     public void ChangeSprite(int BulletsAmount)
     {
         GetComponent<AudioSource>().Play();
-        bulletCount.sprite = mySprites[BulletsAmount];
+        bulletCount.GetComponent<Image>().sprite = mySprites[BulletsAmount];
     }
 }

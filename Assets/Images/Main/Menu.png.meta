@@ -7,16 +7,22 @@ TextureImporter:
     second: Title
   - first:
       213: -1909268238846872576
-    second: ButtonMenu
+    second: Menu1
   - first:
       213: -275939537401066862
-    second: Button_3
+    second: Menu2
   - first:
       213: 2406227903653740696
-    second: Button_2
+    second: Button1
   - first:
       213: -894268473198475317
-    second: Button_1
+    second: Button2
+  - first:
+      213: 7585431397144717044
+    second: Button3
+  - first:
+      213: -2067535388042838268
+    second: Menu3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,10 +115,10 @@ TextureImporter:
       name: Title
       rect:
         serializedVersion: 2
-        x: 50
-        y: 680
-        width: 1763
-        height: 489
+        x: 51
+        y: 681
+        width: 1760
+        height: 486
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,13 +133,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ButtonMenu
+      name: Menu1
       rect:
         serializedVersion: 2
-        x: 1941
-        y: 35
-        width: 501
-        height: 700
+        x: 1945
+        y: 837
+        width: 500
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +154,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_3
+      name: Menu2
       rect:
         serializedVersion: 2
-        x: 107
-        y: 79
-        width: 494
-        height: 537
+        x: 1956
+        y: 666
+        width: 499
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,13 +175,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_2
+      name: Button1
       rect:
         serializedVersion: 2
-        x: 707
-        y: 79
-        width: 494
-        height: 537
+        x: 102
+        y: 490
+        width: 500
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,13 +196,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_1
+      name: Button2
       rect:
         serializedVersion: 2
-        x: 1283
-        y: 79
-        width: 494
-        height: 537
+        x: 698
+        y: 490
+        width: 500
+        height: 125
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,6 +212,48 @@ TextureImporter:
       bones: []
       spriteID: bc78c29cf8be693f0800000000000000
       internalID: -894268473198475317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button3
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 73
+        width: 500
+        height: 542
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6e7e69aadd44960800000000000000
+      internalID: 7585431397144717044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu3
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 29
+        width: 498
+        height: 543
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f3823d483ae43e0800000000000000
+      internalID: -2067535388042838268
       vertices: []
       indices: 
       edges: []
