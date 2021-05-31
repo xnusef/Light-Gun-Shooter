@@ -13,8 +13,27 @@ public class EnemyDie : MonoBehaviour
     public GameObject enemySpawner;
     private EnemySpawner enemyscript;
 
+    public GameObject error;
+
     public float quitTime = 2f;
     public float addTime = 3f;
+
+    void Update()
+    {
+        if (Time.timeSinceLevelLoad < 15)
+        {
+            quitTime = 2f;
+            addTime = 3f;
+        } else if (Time.timeSinceLevelLoad > 15 && Time.timeSinceLevelLoad < 30)
+        {
+            quitTime = 2f;
+            addTime = 2f;
+        } else if (Time.timeSinceLevelLoad > 30)
+        {
+            quitTime = 2f;
+            addTime = 1.3f;
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -35,6 +54,9 @@ public class EnemyDie : MonoBehaviour
         } else {
             script.QuitTime(quitTime);
             enemyscript.RemoveEnemy(this.gameObject);
+            GameObject go = Instantiate(error);
+            yield return new WaitForSeconds(0.2f);
+            Destroy(error);
         }
     }
 
@@ -44,6 +66,7 @@ public class EnemyDie : MonoBehaviour
         {
             Debug.Log("script es null");
         } else {
+            StopCoroutine(SelfDestruction());
             StartCoroutine(ShootedEffect());
         }
     }
