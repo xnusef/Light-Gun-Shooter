@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
     {
         if (timeLeft > 0)
         {
-            timeLeft -= Time.deltaTime;
+            timeLeft -= Time.timeSinceLevelLoad;
             countdown.text = ((int) timeLeft).ToString();
         } else if (timeLeft < 0)
         {
@@ -24,9 +24,9 @@ public class Timer : MonoBehaviour
             //EndGame
         }
 
-        if (time != (int) Time.time)
+        if (time != (int) Time.timeSinceLevelLoad)
         {
-            time = (int) Time.time;
+            time = (int) Time.timeSinceLevelLoad;
             timer.text = time.ToString();
         }
     }

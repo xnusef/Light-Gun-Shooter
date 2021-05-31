@@ -20,17 +20,17 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > nextSpawn)
+        if (Time.timeSinceLevelLoad > nextSpawn)
         {
             if (nextSpawn <= 15)
             {
-                nextSpawn = Time.time + Random.Range(2f,3f);
+                nextSpawn = Time.timeSinceLevelLoad + Random.Range(2f,3f);
             } else if (nextSpawn > 15 && nextSpawn <= 30)
             {
-                nextSpawn = Time.time + Random.Range(1.5f,2.5f);
+                nextSpawn = Time.timeSinceLevelLoad + Random.Range(1.5f,2.5f);
             } else
             {
-                nextSpawn = Time.time + Random.Range(0.7f,1.7f);
+                nextSpawn = Time.timeSinceLevelLoad + Random.Range(0.7f,1.7f);
             }
 
             randomPos = Random.Range(0,(position.Length - 1));
