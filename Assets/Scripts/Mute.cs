@@ -8,6 +8,10 @@ public class Mute : MonoBehaviour
     public GameObject buttonMute;
     private bool isMuted;
 
+    public AudioSource fx;
+    public AudioClip hoverSound;
+    public AudioClip clickSound;
+
     void Start()
     {
         isMuted = false;
@@ -21,8 +25,14 @@ public class Mute : MonoBehaviour
         }
     }
 
+    public void Hover()
+    {
+        fx.PlayOneShot(hoverSound);
+    }
+
     public void MutePressed()
     {
+        fx.PlayOneShot(clickSound);
         isMuted = !isMuted;
         AudioListener.pause = isMuted;
 
