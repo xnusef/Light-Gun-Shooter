@@ -859,7 +859,7 @@ RectTransform:
   - {fileID: 1008094707}
   - {fileID: 822145580}
   m_Father: {fileID: 1749449516}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1407,8 +1407,8 @@ RectTransform:
   - {fileID: 127299864}
   - {fileID: 704186849}
   - {fileID: 2094450891}
-  - {fileID: 836847823}
   - {fileID: 1828105263}
+  - {fileID: 836847823}
   - {fileID: 184702872}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1447,7 +1447,7 @@ RectTransform:
   m_Children:
   - {fileID: 1462849286}
   m_Father: {fileID: 1749449516}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2090,6 +2090,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 136521211}
     m_Modifications:
+    - target: {fileID: 835346179, guid: db3f255afc32e3142b5eeb6b664d97f9, type: 3}
+      propertyPath: errorImage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 835346179, guid: db3f255afc32e3142b5eeb6b664d97f9, type: 3}
       propertyPath: position.Array.size
       value: 17

@@ -100,6 +100,7 @@ MonoBehaviour:
   timerobject: {fileID: 5718280521426581290, guid: a72f90b55a2f2eb49a8d78b2ce8f3be7, type: 3}
   diedEnemy: {fileID: 21300000, guid: 993c9cbf371cab14c835f75d88ecf32f, type: 3}
   enemySpawner: {fileID: 5450200713824340930, guid: db3f255afc32e3142b5eeb6b664d97f9, type: 3}
+  errorFov: {fileID: 7031367116350919137, guid: cab0b5ff2a7af1b4dad0120692b791d8, type: 3}
   quitTime: 2
   addTime: 3
 --- !u!61 &1604826999699830566
