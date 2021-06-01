@@ -12,7 +12,6 @@ public class EnemySpawner : MonoBehaviour
     public Vector2[] position;
 
     public static List<GameObject> enemies = new List<GameObject>();
-    //public static GameObject[] enemies;
 
     static int enemiesCount = 0;
     bool existGO = false; //GO = GameObject.
@@ -23,10 +22,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        //enemies = new GameObject[17];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.timeSinceLevelLoad > nextSpawn)
