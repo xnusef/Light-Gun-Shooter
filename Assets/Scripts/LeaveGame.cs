@@ -8,10 +8,13 @@ public class LeaveGame : MonoBehaviour
     public Animator SceneLoader;
     public Animator Music;
 
+    public GameObject enemySpawner;
+    private EnemySpawner enemySpawnerScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemySpawnerScript = enemySpawner.GetComponent<EnemySpawner>(); 
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class LeaveGame : MonoBehaviour
         Music.SetTrigger("Start");
         Cursor.visible = true;
         yield return new WaitForSeconds(0.5f);
+        enemySpawnerScript.ClearList();
         SceneManager.LoadScene(LevelIndex);
     }
 

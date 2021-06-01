@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public Vector2[] position;
 
     public static List<GameObject> enemies = new List<GameObject>();
-
+ 
     static int enemiesCount = 0;
     bool existGO = false; //GO = GameObject.
 
@@ -64,7 +64,6 @@ public class EnemySpawner : MonoBehaviour
             GameObject myEnemy = Instantiate(enemy);
             myEnemy.transform.SetParent(enemySpawner.transform, false);
             myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
-
             enemies.Add(myEnemy);
             enemiesCount++;
         }else 
@@ -88,6 +87,11 @@ public class EnemySpawner : MonoBehaviour
                 nextSpawn++;
             }
         }
+    }
+
+    public void ClearList()
+    {
+        enemies.Clear();
     }
 
 
