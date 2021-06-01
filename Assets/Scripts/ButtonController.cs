@@ -6,6 +6,11 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject button;
     public GameObject hover;
+    public Animator music;
+
+    public AudioSource fx;
+    public AudioClip hoverSound;
+    public AudioClip clickSound;
 
     public GameObject creditsPanel;
     Animator creditsAnimator;
@@ -15,6 +20,7 @@ public class ButtonController : MonoBehaviour
     public void Hover()
     {
         hover.gameObject.SetActive(true);
+        fx.PlayOneShot(hoverSound);
     }
     public void StopHover()
     {
@@ -24,6 +30,7 @@ public class ButtonController : MonoBehaviour
 
     public void Credits()
     {
+        fx.PlayOneShot(clickSound);
         StartCoroutine(CreditsAnimations());
     }
 
@@ -44,6 +51,7 @@ public class ButtonController : MonoBehaviour
 
     public void PlayGame()
     {
+        fx.PlayOneShot(clickSound);
         StartCoroutine(LoadNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
 
     }
@@ -51,12 +59,14 @@ public class ButtonController : MonoBehaviour
     IEnumerator LoadNextLevel(int LevelIndex)
     {
         SceneLoader.SetTrigger("Start");
+        music.SetTrigger("Start");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(LevelIndex);
     }
 
     public void QuitGame()
     {
+        fx.PlayOneShot(clickSound);
         Application.Quit();
     }
 

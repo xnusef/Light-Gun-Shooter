@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -12,18 +13,32 @@ public class Timer : MonoBehaviour
     public Text timer;
     int time = 0;
 
+    public GameObject leaveGameGo;
+    private LeaveGame gameLost;
+    public GameObject loseText;
+    bool lose = false;
+
+    void Start()
+    {
+        actualTime = 16;
+        time = 0;
+        gameLost = leaveGameGo.GetComponent<LeaveGame>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (actualTime > 0)
+        if (actualTime > 0 && lose == false)
         {
             //tiempo restante - tiempo actual  // por cada frame resta el tiempo exacto desde la ejecución
             actualTime = (int) (timeLeft - Time.timeSinceLevelLoad);
             countdown.text = actualTime.ToString();
 
-        } else if (actualTime < 0)
+        } else if (actualTime <= 0 && lose == false)
         {
+            lose = true;
             countdown.text = ("0");
+            StartCoroutine(Lose());
             //EndGame
         }
 
@@ -34,13 +49,42 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void QuitTime(float time)
+    public void QuitTime()
     {
-        timeLeft -= time;
+        if (Time.timeSinceLevelLoad < 15)
+        {
+            timeLeft -= 2f;
+        } else if (Time.timeSinceLevelLoad > 15 && Time.timeSinceLevelLoad < 30)
+        {
+            timeLeft -= 2f;
+        } else if (Time.timeSinceLevelLoad > 30)
+        {
+            timeLeft -= 2f;
+        }
     }
 
-    public void AddTime(float time)
+    public void AddTime()
     {
-        timeLeft += time;
+
+        if (Time.timeSinceLevelLoad < 15)
+        {
+            timeLeft += 3f;
+        } else if (Time.timeSinceLevelLoad > 15 && Time.timeSinceLevelLoad < 30)
+        {
+            timeLeft += 2f;
+        } else if (Time.timeSinceLevelLoad > 30)
+        {
+            timeLeft += 1.3f;
+        }
+    }
+
+    IEnumerator Lose()
+    {
+        loseText.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        Cursor.visible = true;
+        loseText.SetActive(false);
+        lose = false;
+        gameLost.BackToMenu();
     }
 }
