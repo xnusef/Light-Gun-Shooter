@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject errorImage;
     public GameObject enemy;
     public GameObject enemySpawner;
-
+    
     public Vector2[] position;
 
     public static List<GameObject> enemies = new List<GameObject>();

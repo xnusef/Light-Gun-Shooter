@@ -52,6 +52,10 @@ public class EnemyDie : MonoBehaviour
         {
             Debug.Log("script es null");
         } else {
+            GameObject go = Instantiate(errorFov);
+            go.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            yield return new WaitForSeconds(0.1f);
+            Destroy(go);
             script.QuitTime(quitTime);
             enemyscript.RemoveEnemy(this.gameObject);
         }
