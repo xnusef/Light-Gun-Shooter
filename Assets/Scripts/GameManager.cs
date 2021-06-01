@@ -43,13 +43,13 @@ public class GameManager : MonoBehaviour
             clickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(clickedPos,clickedPos,0f);
 
-            if (hit == false)
-            {
-                
-            } else if (hit == true)
+            if (hit)
             {
                 bool shooted = true;
-                if (hit.collider.tag == "Enemy" && shooted == true)
+                if (hit.collider.tag == "Wall" && shooted == true)
+                {
+                    shooted = false;
+                } else if (hit.collider.tag == "Enemy" && shooted == true)
                 {
                     enemyscript = hit.collider.GetComponent<EnemyDie>(); //Setea "enemyscript" como el script "EnemyDie" que forma parte del collider del objeto al que le diste
                     enemyscript.Shooted();
