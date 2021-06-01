@@ -11,6 +11,14 @@ public class Mute : MonoBehaviour
     void Start()
     {
         isMuted = false;
+        AudioListener.pause = isMuted;
+        if (AudioListener.pause == true)
+        {
+            buttonMute.gameObject.GetComponent<Image>().sprite = muteOff;
+        } else
+        {
+            buttonMute.gameObject.GetComponent<Image>().sprite = muteOn;
+        }
     }
 
     public void MutePressed()
@@ -18,7 +26,7 @@ public class Mute : MonoBehaviour
         isMuted = !isMuted;
         AudioListener.pause = isMuted;
 
-        if (!isMuted)
+        if (AudioListener.pause == false)
         {
             buttonMute.gameObject.GetComponent<Image>().sprite = muteOn;
         } else 

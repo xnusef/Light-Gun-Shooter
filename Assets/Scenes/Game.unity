@@ -675,11 +675,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f16c49a8668b0a842bd4468c99d4d86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muteOff: {fileID: 0}
+  muteOn: {fileID: 0}
+  buttonMute: {fileID: 0}
 --- !u!1 &704186846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,12 +1501,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1937651798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc87354a3a0a3294aa424a8a7b3dd8a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3763ee2da91e13044842394aed404bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  hover: {fileID: 0}
-  creditsPanel: {fileID: 0}
   SceneLoader: {fileID: 1096190631}
 --- !u!4 &1937651800
 Transform:
