@@ -20,6 +20,8 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        actualTime = 16;
+        time = 0;
         gameLost = leaveGameGo.GetComponent<LeaveGame>();
     }
 
@@ -47,14 +49,33 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void QuitTime(float time)
+    public void QuitTime()
     {
-        timeLeft -= time;
+        if (Time.timeSinceLevelLoad < 15)
+        {
+            timeLeft -= 2f;
+        } else if (Time.timeSinceLevelLoad > 15 && Time.timeSinceLevelLoad < 30)
+        {
+            timeLeft -= 2f;
+        } else if (Time.timeSinceLevelLoad > 30)
+        {
+            timeLeft -= 2f;
+        }
     }
 
-    public void AddTime(float time)
+    public void AddTime()
     {
-        timeLeft += time;
+
+        if (Time.timeSinceLevelLoad < 15)
+        {
+            timeLeft += 3f;
+        } else if (Time.timeSinceLevelLoad > 15 && Time.timeSinceLevelLoad < 30)
+        {
+            timeLeft += 2f;
+        } else if (Time.timeSinceLevelLoad > 30)
+        {
+            timeLeft += 1.3f;
+        }
     }
 
     IEnumerator Lose()

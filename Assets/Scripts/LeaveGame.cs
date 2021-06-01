@@ -32,6 +32,7 @@ public class LeaveGame : MonoBehaviour
     {
         SceneLoader.SetTrigger("Start");
         Music.SetTrigger("Start");
+        Cursor.visible = true;
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(LevelIndex);
     }
