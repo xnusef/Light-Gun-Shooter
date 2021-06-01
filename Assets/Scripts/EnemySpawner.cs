@@ -12,8 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public Vector2[] position;
 
     public static List<GameObject> enemies = new List<GameObject>();
-    //public static GameObject[] enemies;
-
+ 
     static int enemiesCount = 0;
     bool existGO = false; //GO = GameObject.
 
@@ -23,10 +22,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        //enemies = new GameObject[17];
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.timeSinceLevelLoad > nextSpawn)
@@ -67,7 +64,6 @@ public class EnemySpawner : MonoBehaviour
             GameObject myEnemy = Instantiate(enemy);
             myEnemy.transform.SetParent(enemySpawner.transform, false);
             myEnemy.transform.position = new Vector3(position[randomPos].x, position[randomPos].y, 0);
-
             enemies.Add(myEnemy);
             enemiesCount++;
         }else 
@@ -91,6 +87,11 @@ public class EnemySpawner : MonoBehaviour
                 nextSpawn++;
             }
         }
+    }
+
+    public void ClearList()
+    {
+        enemies.Clear();
     }
 
 

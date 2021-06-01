@@ -1736,6 +1736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneLoader: {fileID: 1096190631}
   Music: {fileID: 736717317}
+  enemySpawner: {fileID: 2065850703}
 --- !u!4 &1937651800
 Transform:
   m_ObjectHideFlags: 0
@@ -2304,6 +2305,11 @@ PolygonCollider2D:
       - {x: 1.2877015, y: 3.621872}
       - {x: 1.2758293, y: 2.8183413}
       - {x: 0.47417063, y: 2.8262558}
+--- !u!1 &2065850703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5450200713824340930, guid: db3f255afc32e3142b5eeb6b664d97f9, type: 3}
+  m_PrefabInstance: {fileID: 5450200714475437107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2094450890
 GameObject:
   m_ObjectHideFlags: 0
