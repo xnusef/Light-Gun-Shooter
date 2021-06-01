@@ -6,6 +6,8 @@ public class ButtonController : MonoBehaviour
 {
     public GameObject button;
     public GameObject hover;
+    public Animator music;
+
 
     public GameObject creditsPanel;
     Animator creditsAnimator;
@@ -51,6 +53,7 @@ public class ButtonController : MonoBehaviour
     IEnumerator LoadNextLevel(int LevelIndex)
     {
         SceneLoader.SetTrigger("Start");
+        music.SetTrigger("Start");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(LevelIndex);
     }

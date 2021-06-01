@@ -6,6 +6,7 @@ public class LeaveGame : MonoBehaviour
 {
 
     public Animator SceneLoader;
+    public Animator Music;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class LeaveGame : MonoBehaviour
     IEnumerator LoadPreviousLevel(int LevelIndex)
     {
         SceneLoader.SetTrigger("Start");
+        Music.SetTrigger("Start");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(LevelIndex);
     }
