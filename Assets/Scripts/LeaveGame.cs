@@ -23,7 +23,7 @@ public class LeaveGame : MonoBehaviour
         }
     }
 
-    void BackToMenu()
+    public void BackToMenu()
     {
         StartCoroutine(LoadPreviousLevel(SceneManager.GetActiveScene().buildIndex - 1));
     }
